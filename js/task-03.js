@@ -15,11 +15,10 @@ const images = [
 
 const imageGallery = document.querySelector('#gallery');
 
-const galleryElement = ({ url, alt }) => `<li><img src = "${url}" alt = "${alt}" width = 200, height = 150 </li>`;
-
-const createGallery = images.reduce(
-    (acc, item) => acc + galleryElement(item), ""
-)
-
-imageGallery.insertAdjacentHTML("afterbegin", createGallery);
+const createGallery = images.forEach(el => {
+  imageGallery.insertAdjacentHTML(
+    'afterbegin',
+    `<li><img src = "${el.url}" alt = "${el.alt}"  width = "150" height = "100" /></li>`,
+  );
+});
 console.log(imageGallery);

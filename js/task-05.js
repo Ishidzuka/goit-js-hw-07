@@ -6,10 +6,10 @@ let outputElement = document.querySelector('#name-output');
 
 function inputChange () {
     if (inputElement.value === "") {
-        outputElement.innerHTML = "незнакомец";
+        outputElement.textContent = "незнакомец";
     }
 
     else {
-        outputElement.innerHTML = inputElement.value;
+        outputElement.textContent = inputElement.value;
     }
 }
