@@ -9,9 +9,7 @@ const ingredients = [
 
 const ingredientElement = document.querySelector('#ingredients');
 
-const ingredientList = ingredients.forEach(el => {
-    let items = document.createElement('li');
-    items.textContent = el;
-    ingredientElement.append(items); 
-})
+const list = ingredients.reduce((string, item) => string + `<li>${item}</li>`, '');
+
+ingredientElement.insertAdjacentHTML('afterbegin', list);
 console.log(ingredientElement);
